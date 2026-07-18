@@ -41,7 +41,7 @@ body {
 
 .placard-wrapper {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     background-color: var(--bg-cream-deck);
     box-shadow: 0 45px 100px rgba(0, 0, 0, 0.8);
     display: flex;
@@ -90,11 +90,11 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 25px 0 30px;
+    margin: 15px 0 20px;
 }
 
 .artifact-img {
-    width: 100%;
+    width: 80%;
     max-width: 290px;
     height: auto;
     object-fit: contain;
