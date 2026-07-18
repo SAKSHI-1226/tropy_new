@@ -87,14 +87,14 @@ body {
 }
 
 .artifact-showcase {
-    width: 80%;
+    width: 60%;
     display: flex;
     justify-content: center;
     margin: 5px 0 10px;
 }
 
 .artifact-img {
-    width: 60%;
+    width: 40%;
     max-width: 290px;
     height: auto;
     object-fit: contain;
