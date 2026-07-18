@@ -56,7 +56,7 @@ body {
 .hero-zone {
     background-color: var(--bg-dark-hero);
     background-image: radial-gradient(circle at 50% 30%, #201e18 0%, #0f0f0e 100%);
-    padding: 2px 2px 2px;
+    padding: 30px 20px 2px;
     border-bottom: 3px solid var(--gold-premium);
 }
 
@@ -71,7 +71,7 @@ body {
 
 #title {
     font-family: var(--font-serif);
-    font-size: clamp(20px, 6.5vw, 34px);
+    font-size: clamp(26px, 6.5vw, 34px);
     color: var(--text-hero-main);
     line-height: 1.2;
     letter-spacing: 0.03em;
@@ -154,10 +154,10 @@ body {
    LOWER DECK CONTENT SYSTEMS (ELITE TRANSFORMATION)
 ========================================================== */
 .content-deck {
-    padding: 2px 24px 50px;
+    padding: 2px 24px 30px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 20px;
 }
 
 .segment-title {
@@ -166,7 +166,7 @@ body {
     color: var(--text-deck-dark);
     font-weight: 1000;
     letter-spacing: 0.1em;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -285,7 +285,7 @@ body {
     border: 1px solid rgba(204, 160, 80, 0.3);
     padding: 12px 20px;
     border-radius: 30px;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -304,7 +304,7 @@ body {
     justify-content: center; /* This centers the buttons horizontally */
     align-items: center;
     gap: 15px; /* Adds space between the buttons */
-    margin: 20px 0; /* Provides spacing above and below the bar */
+    margin: 8px 0; /* Provides spacing above and below the bar */
     width: 100%;
 }
 
@@ -422,9 +422,7 @@ body {
     line-height: 1.5;
 }
 
-.hidden-element {
-    display: none !important;
-}
+
 
 /* ==========================================================
    HARDWARE HARDENED GRAPHIC VELOCITY MOTIONS
