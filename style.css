@@ -71,7 +71,7 @@ body {
 
 #title {
     font-family: var(--font-serif);
-    font-size: clamp(26px, 6.5vw, 34px);
+    font-size: clamp(20px, 6.5vw, 34px);
     color: var(--text-hero-main);
     line-height: 1.2;
     letter-spacing: 0.03em;
@@ -79,12 +79,7 @@ body {
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.tagline {
-    font-family: var(--font-serif);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--gold-bright);
-}
+
 
 .artifact-showcase {
     width: 60%;
