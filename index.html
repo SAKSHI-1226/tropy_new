@@ -16,12 +16,7 @@
     <!-- UPPER HERO ZONE -->
     <div class="hero-zone animate-fade-in">
         <header class="placard-header">
-            
             <h1 id="title"></h1>
-           
-            
-            
-            
         </header>
 
         <div class="artifact-showcase">
@@ -41,7 +36,7 @@
     <!-- LOWER CONTENT DECK -->
     <div class="content-deck">
         
-        <!-- TOGGLE CONTROLS (Centered) -->
+        <!-- TOGGLE CONTROLS -->
         <div class="interactive-toggle-bar dynamic-reveal">
             <button id="toggleSummaryBtn" class="toggle-tab active" onclick="switchView('summary')">
                 <span>📜</span> READ SUMMARY
@@ -51,7 +46,7 @@
             </button>
         </div>
 
-        <!-- DYNAMIC CONTENT (Summary / Timeline) -->
+        <!-- DYNAMIC CONTENT -->
         <section id="summaryViewBlock" class="summary-segment dynamic-reveal">
             <div id="historyText" class="summary-body"></div>
         </section>
@@ -60,19 +55,16 @@
             <div id="timelineContainer" class="timeline-stepper"></div>
         </section>
 
-        <!-- KEY INFORMATION (At the bottom) -->
+        <!-- KEY INFORMATION -->
         <section class="info-segment dynamic-reveal">
-            <section class="info-segment dynamic-reveal">
-    <div class="info-segment-header">
-        <span class="title-icon">🏛️</span> KEY INFORMATION
-    </div>
-    <div id="factsContainer" class="facts-grid-matrix"></div>
-</section>
+            <div class="info-segment-header">
+                <span class="title-icon">🏛️</span> KEY INFORMATION
+            </div>
             <div id="factsContainer" class="facts-grid-matrix"></div>
         </section>
         
-    </div>
-</div>
+    </div> <!-- End of content-deck -->
+</div> <!-- End of placard-wrapper -->
 
 <script src="script.js"></script>
 </body>
