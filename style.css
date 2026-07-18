@@ -82,19 +82,29 @@ body {
 
 
 .artifact-showcase {
-    width: 60%;
+    /* Change width to 100% so it can actually span the container */
+    width: 100%; 
     display: flex;
-    justify-content: center;
-    margin: 5px 0 10px;
+    /* Use justify-content to push the image to the right */
+    justify-content: flex-end; 
+    margin: 15px 0 20px;
+    min-height: 150px; 
+    /* Remove padding-left; use padding-right to create a margin from the screen edge */
+    padding-right: 20px; 
 }
 
 .artifact-img {
-    width: 40%;
-    max-width: 200px;
-    height: auto;
+    /* Set to a larger percentage of the showcase container */
+    width: 90%; 
+    max-width: 320px;
+    height: auto; /* Changed from fixed 150px to auto so the image doesn't distort */
     object-fit: contain;
     filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.9));
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Change from display: flex to block */
+    display: block; 
+
+    
 }
 
 .artifact-img:hover {
