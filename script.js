@@ -31,7 +31,7 @@ async function loadData() {
 
 function displayPlacard(trophy) {
     title.textContent = trophy.title;
-   
+    
     image.src = trophy.image ? `images/${trophy.image}` : "";
     // History - now naturally picks up the updated .summary-body p styling
     historyText.innerHTML = (Array.isArray(trophy.history) ? trophy.history : [trophy.history])
