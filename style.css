@@ -84,13 +84,13 @@ body {
 .artifact-showcase {
     /* Change width to 100% so it can actually span the container */
     width: 100%; 
-    display: flex;
+    display: block;
     /* Use justify-content to push the image to the right */
     justify-content: flex-end; 
     margin: 15px 0 20px;
     min-height: 150px; 
     /* Remove padding-left; use padding-right to create a margin from the screen edge */
-    padding-right: 20px; 
+ 
 }
 
 .artifact-img {
