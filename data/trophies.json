@@ -1,0 +1,50 @@
+[
+  {
+    "id": "seringapatam-trophy",
+    "title": "SERINGAPATAM TROPHY",
+    "tagline": "A SYMBOL OF VICTORY AND HISTORY",
+    "image": "seringapatnam-trophy.jpeg",
+    "audio": "seringapatam-story.mp3",
+    "facts": {
+      "Presented To": "The British Army in India",
+      "Date of Presentation": "IV May MDCCC",
+      "Date of Commemoration": "04 Nov 1799",
+      "Occasion": "British Victory over Tipu Sultan",
+      "Presented By": "Major General George Harris",
+      "Material": "Sterling Silver",
+      "Description": "Awarded for decisive victory."
+    },
+    "history": [
+      "The trophy was instituted to commemorate the victory of the British over Tipu Sultan on 04 Nov 1799.",
+      "The trophy is made of sterling silver and depicts a Lion (the British) subduing the Tiger (Tipu Sultan).",
+      "The word 'Seringapatam' is inscribed on the front side of the trophy and the date 'IV May MDCCC' on the rear side.",
+      "On the sides it bears the two faces of the medal depicting the Lion subduing the Tiger.",
+      "On one side of the medal is the depiction of the storming of the Seringapatam Fort from an actual drawing made on the spot. On the other side is the meridian sun denoting the time of the assault, with a Persian inscription underneath."
+    ]
+  },
+  {
+    "id": "sakshi-trophy",
+    "title": "SAKSHI TROPHY",
+    "tagline": "A SYMBOL OF VICTORY AND HISTORY",
+    "image": "sakshi-trophy.jpeg",
+    "audio": "seringapatam-story.mp3",
+    "facts": {
+      "Presented To": "The British Army in India",
+      
+      
+     
+      "Material": "Sterling Silver",
+      "Description": "Awarded for decisive victory."
+    },
+    "history": [
+      "The trophy was instituted to commemorate the victory of the British over Tipu Sultan on 04 Nov 1799.",
+      "The trophy is made of sterling silver and depicts a Lion (the British) subduing the Tiger (Tipu Sultan).",
+      "The word 'Seringapatam' is inscribed on the front side of the trophy and the date 'IV May MDCCC' on the rear side.",
+      "On the sides it bears the two faces of the medal depicting the Lion subduing the Tiger.",
+      "On one side of the medal is the depiction of the storming of the Seringapatam Fort from an actual drawing made on the spot. On the other side is the meridian sun denoting the time of the assault, with a Persian inscription underneath."
+    ]
+  }
+
+
+  
+]

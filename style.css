@@ -1,0 +1,442 @@
+/* ==========================================================
+   EXHIBIT THEME V3: ULTRA-PREMIUM LUXURY DISPLAY ARCHITECTURE
+========================================================== */
+
+:root {
+    ---bg-cream-deck: #FDFBF7;           /* Brighter, cleaner background */
+    --text-deck-dark: #2D2926;          /* Darker, high-contrast text */
+    --text-deck-muted: #5C564E;         /* More legible muted text */
+    --gold-premium: #B8860B;            /* Deeper, readable gold */
+    --gold-bright: #D4AF37;
+    --gold-shimmer: linear-gradient(90deg, transparent, rgba(205, 173, 69, 0.25), transparent);
+    --text-hero-main: #ffffff;
+
+    /* Lower Section: Luxury Gallery Cream System */
+    --bg-cream-deck: #f7ead3;
+    --bg-card-gradient: linear-gradient(145deg, #f7e5a4, #fbf7ef);
+    --text-deck-dark: #30291d;
+    --text-deck-muted: #736752;
+    --border-premium: 1px solid rgba(204, 160, 80, 0.28);
+    --shadow-premium: 0 8px 24px rgba(138, 111, 62, 0.08);
+    
+    --font-serif: 'Cinzel', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #080807;
+    font-family: var(--font-sans);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.placard-wrapper {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--bg-cream-deck);
+    box-shadow: 0 45px 100px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ==========================================================
+   UPPER HERO GRAPHIC WINDOW
+========================================================== */
+.hero-zone {
+    background-color: var(--bg-dark-hero);
+    background-image: radial-gradient(circle at 50% 30%, #201e18 0%, #0f0f0e 100%);
+    padding: 40px 24px 35px;
+    border-bottom: 3px solid var(--gold-premium);
+}
+
+.meta-tag {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+#title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 6.5vw, 34px);
+    color: var(--text-hero-main);
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.tagline {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold-bright);
+}
+
+.artifact-showcase {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0 30px;
+}
+
+.artifact-img {
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.9));
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.artifact-img:hover {
+    transform: scale(1.04) translateY(-4px);
+}
+
+/* Luxury Audio Pill Control */
+.audio-btn {
+    background: #171613;
+    border: 1px solid var(--gold-muted);
+    border-radius: 30px;
+    padding: 14px 24px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.btn-main-label {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 12px;
+}
+
+.audio-arrow {
+    color: var(--gold-bright);
+    font-size: 9px;
+    background: rgba(255, 255, 255, 0.08);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* ==========================================================
+   LOWER DECK CONTENT SYSTEMS (ELITE TRANSFORMATION)
+========================================================== */
+.content-deck {
+    padding: 2px 24px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.segment-title {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--text-deck-dark);
+    font-weight: 1000;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 4px solid rgba(204, 160, 80, 0.2);
+    padding-bottom: 10px;
+}
+.segment-title .title-icon {
+    font-size: 18px;
+}
+.facts-grid-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.matrix-row-split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+
+/* Elite Balanced Core Dynamic Cards */
+.fact-card {
+    background: #FFFFFF;               /* Solid white cards for better contrast */
+    border: 1px solid rgba(184, 134, 11, 0.3); /* Defined gold border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    
+    
+    border-radius: 8px;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fact-card.full-width-banner {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding: 16px 22px;
+    gap: 20px;
+    width: 100%;
+}
+
+/* High-End Linear Shimmer Animation Reflective Plate */
+.fact-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: var(--gold-shimmer);
+    transform: skewX(-25deg);
+    transition: 0.8s;
+}
+
+.fact-card:hover::after {
+    left: 150%;
+}
+
+.fact-card:hover {
+    border-color: var(--gold-premium);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(186, 149, 79, 0.15);
+}
+
+.key-icon {
+    font-size: 20px;
+    color: var(--gold-premium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+}
+
+.fact-card.full-width-banner .key-icon {
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.fact-meta-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fact-key {
+    color: #8B7355;                    /* Better contrast than light tan */
+    font-weight: 800;
+    font-size: 16px;
+    
+    
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.fact-val {
+    color: var(--text-deck-dark);      /* Explicitly use the new dark color */
+    
+    font-size: 16px;
+    
+    font-weight: 800;
+    line-height: 1.45;
+}
+/* Golden Header for Key Information */
+.info-segment-header {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(204, 160, 80, 0.05));
+    border: 1px solid rgba(204, 160, 80, 0.3);
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 1000;
+    color: var(--gold-muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+}
+/* ==========================================================
+   INTERACTIVE USER VIEW CONTROL PILLS
+========================================================== */
+.interactive-toggle-bar {
+    display: flex;
+    justify-content: center; /* This centers the buttons horizontally */
+    align-items: center;
+    gap: 15px; /* Adds space between the buttons */
+    margin: 20px 0; /* Provides spacing above and below the bar */
+    width: 100%;
+}
+
+/* Normal State (Subtle) */
+/* Increased button size and prominence */
+.toggle-tab {
+    background: transparent;
+    border: 1px solid rgba(204, 160, 80, 0.3);
+    color: var(--text-deck-muted);
+    font-family: var(--font-serif);
+    
+    /* Increased sizing */
+    font-size: 14px;            /* Larger text */
+    padding: 14px 28px;         /* More vertical and horizontal breathing room */
+    height: auto;               /* Allows the button to grow with padding */
+    min-width: 160px;           /* Ensures a consistent, substantial width */
+    
+    font-weight: 700;           /* Maintaining bold text */
+    cursor: pointer;
+    border-radius: 30px;        /* Slightly more rounded for a modern look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+/* Active State (Golden) remains consistent */
+.toggle-tab.active {
+    background: linear-gradient(135deg, #d4af37, #cca050);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 6px 20px rgba(204, 160, 80, 0.5); /* Slightly larger shadow for "lift" */
+    transform: scale(1.05);     /* Slightly larger press-effect */
+}
+.toggle-tab.active span {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.summary-segment {
+    background: var(--bg-card-gradient);
+    border: var(--border-premium);
+    border-radius: 8px;
+    padding: 24px 22px;
+    box-shadow: var(--shadow-premium);
+}
+
+
+/* Highlighted Summary Text Styling */
+/* Highlighted Summary Text Styling */
+.summary-body p {
+    font-size: 15px; 
+    color: var(--text-deck-dark); 
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-weight: 700; /* Bolding the text */
+    font-family: var(--font-serif); 
+    border-left: 4px solid var(--gold-premium); 
+    padding-left: 15px;
+}
+.summary-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================
+   DYNAMIC ARCHIVAL TIMELINE GRAPHIC STEPPER
+========================================================== */
+.timeline-stepper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-stepper::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 8px;
+    bottom: 8px; width: 2px;
+    background: rgba(204, 160, 80, 0.25);
+}
+
+.timeline-node {
+    display: flex;
+    position: relative;
+    gap: 16px;
+}
+
+.node-marker {
+    position: absolute;
+    left: -20px; top: 4px;
+    width: 10px; height: 10px;
+    background: #ffffff;
+    border: 2px solid var(--gold-premium);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.node-marker.highlight {
+    background: var(--gold-bright);
+    box-shadow: 0 0 8px var(--gold-bright);
+}
+
+.node-content h4 {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    color: var(--text-deck-dark);
+    margin-bottom: 4px;
+}
+
+.node-content p {
+    font-size: 12px;
+    color: var(--text-deck-muted);
+    line-height: 1.5;
+}
+
+.hidden-element {
+    display: none !important;
+}
+
+/* ==========================================================
+   HARDWARE HARDENED GRAPHIC VELOCITY MOTIONS
+========================================================== */
+.animate-fade-in {
+    opacity: 0;
+    animation: luxuryFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dynamic-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: luxuryRevealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dynamic-reveal:nth-of-type(2) { animation-delay: 0.1s; }
+.dynamic-reveal:nth-of-type(3) { animation-delay: 0.2s; }
+
+@keyframes luxuryFadeIn { to { opacity: 1; } }
+@keyframes luxuryRevealUp { to { opacity: 1; transform: translateY(0); } }
