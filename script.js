@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const trophyId = params.get("id");
 
 const title = document.getElementById("title");
-const tagline = document.getElementById("tagline");
+
 const image = document.getElementById("trophyImage");
 const factsContainer = document.getElementById("factsContainer");
 const historyText = document.getElementById("historyText");
@@ -31,7 +31,7 @@ async function loadData() {
 
 function displayPlacard(trophy) {
     title.textContent = trophy.title;
-    tagline.textContent = trophy.tagline || trophy.subtitle || "";
+   
     image.src = trophy.image ? `images/${trophy.image}` : "";
     // History - now naturally picks up the updated .summary-body p styling
     historyText.innerHTML = (Array.isArray(trophy.history) ? trophy.history : [trophy.history])
