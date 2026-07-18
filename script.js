@@ -1,71 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trophy</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+const params = new URLSearchParams(window.location.search);
+const trophyId = params.get("id");
 
-<div class="placard-wrapper">
+const title = document.getElementById("title");
+
+const image = document.getElementById("trophyImage");
+const factsContainer = document.getElementById("factsContainer");
+const historyText = document.getElementById("historyText");
+const timelineContainer = document.getElementById("timelineContainer");
+const playButton = document.getElementById("playButton");
+const audioPlayer = document.getElementById("audioPlayer");
+
+const summaryViewBlock = document.getElementById("summaryViewBlock");
+const timelineViewBlock = document.getElementById("timelineViewBlock");
+const toggleSummaryBtn = document.getElementById("toggleSummaryBtn");
+const toggleTimelineBtn = document.getElementById("toggleTimelineBtn");
+
+const iconMap = {
+    "presented to": "👤", "date of presentation": "📅", "date of commemoration": "📆",
+    "occasion": "⚔️", "presented by": "🎖️", "material": "🛡️", "description": "📄"
+};
+
+async function loadData() {
+    try {
+        const response = await fetch("data/trophies.json");
+        const trophies = await response.json();
+        let currentTrophy = trophyId ? trophies.find(item => item.id === trophyId) : trophies[0];
+        if (currentTrophy) displayPlacard(currentTrophy);
+    } catch (error) { console.error("Data load error:", error); }
+}
+
+function displayPlacard(trophy) {
+    title.textContent = trophy.title;
     
-    <!-- UPPER HERO ZONE -->
-    <div class="hero-zone animate-fade-in">
-        <header class="placard-header">
-            <h1 id="title"></h1>
-        </header>
+    image.src = trophy.image ? `images/${trophy.image}` : "";
+    // History - now naturally picks up the updated .summary-body p styling
+    historyText.innerHTML = (Array.isArray(trophy.history) ? trophy.history : [trophy.history])
+        .map(t => `<p>${t}</p>`)
+        .join('');
+    // Timeline Logic
+    if (trophy.timeline && trophy.timeline.length > 0) {
+        toggleTimelineBtn.style.display = "flex";
+        timelineContainer.innerHTML = trophy.timeline.map((node, i) => `
+            <div class="timeline-node">
+                <div class="node-marker ${i === 1 ? 'highlight' : ''}"></div>
+                <div class="node-content"><h4>${node.title}</h4><p>${node.text}</p></div>
+            </div>`).join('');
+    } else {
+        toggleTimelineBtn.style.display = "none";
+    }
 
-        <div class="artifact-showcase">
-            <img id="trophyImage" alt="Exhibit Object" class="artifact-img">
-        </div>
+    // Facts Grid
+    factsContainer.innerHTML = "";
+    if (trophy.facts) {
+        const factsArray = Object.entries(trophy.facts);
+        const gridItems = factsArray.slice(0, 4);
+        const bannerItems = factsArray.slice(4);
 
-        <footer class="audio-footer-action">
-            <button id="playButton" class="audio-btn">
-                <span class="audio-icon">🎧</span>
-                <span class="btn-main-label">LISTEN TO THE STORY</span>
-                <span class="audio-arrow">▶</span>
-            </button>
-            <audio id="audioPlayer"></audio>
-        </footer>
-    </div>
+        const splitRowWrapper = document.createElement("div");
+        splitRowWrapper.className = "matrix-row-split";
+        gridItems.forEach(([key, value]) => {
+            splitRowWrapper.innerHTML += `<div class="fact-card"><div class="key-icon">${iconMap[key.toLowerCase().trim()] || "▪"}</div><div class="fact-meta-container"><span class="fact-key">${key}</span><span class="fact-val">${value}</span></div></div>`;
+        });
+        factsContainer.appendChild(splitRowWrapper);
 
-    <!-- LOWER CONTENT DECK -->
-    <div class="content-deck">
-        
-        <!-- TOGGLE CONTROLS -->
-        <div class="interactive-toggle-bar dynamic-reveal">
-            <button id="toggleSummaryBtn" class="toggle-tab active" onclick="switchView('summary')">
-                <span>📜</span> READ SUMMARY
-            </button>
-            <button id="toggleTimelineBtn" class="toggle-tab" onclick="switchView('timeline')">
-                <span>⏳</span> TIMELINE
-            </button>
-        </div>
+        bannerItems.forEach(([key, value]) => {
+            factsContainer.innerHTML += `<div class="fact-card full-width-banner"><div class="key-icon">${iconMap[key.toLowerCase().trim()] || "▪"}</div><div class="fact-meta-container"><span class="fact-key">${key}</span><span class="fact-val">${value}</span></div></div>`;
+        });
+    }
 
-        <!-- DYNAMIC CONTENT -->
-        <section id="summaryViewBlock" class="summary-segment dynamic-reveal">
-            <div id="historyText" class="summary-body"></div>
-        </section>
+    // History
+    historyText.innerHTML = (Array.isArray(trophy.history) ? trophy.history : [trophy.history]).map(t => `<p>${t}</p>`).join('');
 
-        <section id="timelineViewBlock" class="summary-segment dynamic-reveal hidden-element">
-            <div id="timelineContainer" class="timeline-stepper"></div>
-        </section>
+    // Audio
+    if (trophy.audio) {
+        audioPlayer.src = `audio/${trophy.audio}`;
+        playButton.style.display = "inline-flex";
+    } else {
+        playButton.style.display = "none";
+    }
+}
 
-        <!-- KEY INFORMATION -->
-        <section class="info-segment dynamic-reveal">
-            <div class="info-segment-header">
-                <span class="title-icon">🏛️</span> KEY INFORMATION
-            </div>
-            <div id="factsContainer" class="facts-grid-matrix"></div>
-        </section>
-        
-    </div>
-</div>
+window.switchView = (view) => {
+    summaryViewBlock.classList.toggle("hidden-element", view !== 'summary');
+    timelineViewBlock.classList.toggle("hidden-element", view !== 'timeline');
+    toggleSummaryBtn.classList.toggle("active", view === 'summary');
+    toggleTimelineBtn.classList.toggle("active", view === 'timeline');
+};
 
-<script src="script.js"></script>
-</body>
-</html>
+playButton.addEventListener("click", () => {
+    if (audioPlayer.paused) { audioPlayer.play(); playButton.querySelector(".btn-main-label").textContent = "PAUSE STORY"; }
+    else { audioPlayer.pause(); playButton.querySelector(".btn-main-label").textContent = "LISTEN TO THE STORY"; }
+});
+
+loadData();
